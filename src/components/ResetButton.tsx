@@ -10,7 +10,7 @@ export const ResetButton = ({ option, reset }: ComponenteProps) => {
   return (
     <button onClick={sendReset}>
       <svg
-        className="fill-subColor"
+        className="fill-subColor hover:fill-textColor"
         width="24px"
         height="24px"
         version="1.1"

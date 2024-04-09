@@ -49,6 +49,7 @@ export const HomePage = () => {
   const [op, setOp] = useState(0);
   const [cont, setCont] = useState(0);
   const [text, setText] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
 
   const prueba = (key: string, inputCont: number) => {
     if (key === textArray[inputCont]) {
@@ -73,6 +74,10 @@ export const HomePage = () => {
     });
   };
 
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
   const reset = (option: number) => {
     textArray = getRandomQuote(option);
     setCont(0);
@@ -85,6 +90,7 @@ export const HomePage = () => {
     if (isFocus) {
       inputRef.current?.focus();
     }
+    setIsFocused(isFocus);
   };
 
   const option = (option: number) => {
@@ -95,17 +101,30 @@ export const HomePage = () => {
 
   useEffect(() => {
     inputRef.current?.focus();
+    setIsFocused(true);
   }, []);
 
+  const bgClick = (event) => {
+    const { id } = event.target;
+    if (id === "main-bg") {
+      setIsFocused(false);
+    }
+  };
+
   return (
-    <main className="grid grid-cols-1 h-full justify-center self-start text-center">
+    <main
+      id="main-bg"
+      className="grid h-full grid-cols-1 justify-center self-start text-center"
+      onClick={bgClick}
+    >
       <Menu />
-      <div className="mb-1 grid grid-cols-3 auto-rows-min items-end">
+      <div className="relative mb-1 grid auto-rows-min grid-cols-3 items-end ">
         <span className="text-start text-2xl text-mainColor">
           {`${cont}/${textArray.length}`}
         </span>
         <Modal listQuotes={listQuotes} focus={focus} option={option} />
-        <div className="relative items-center col-span-3 text-2xl">
+        
+        <div className="relative col-span-3 items-center text-2xl">
           <input
             className="absolute left-0 top-0 opacity-0"
             id="input-test"
@@ -116,6 +135,7 @@ export const HomePage = () => {
               setText(e.target.value);
             }}
             onKeyDown={handleKeyPress}
+            onBlur={handleBlur}
             type="text"
             value={text}
           />
@@ -123,6 +143,8 @@ export const HomePage = () => {
             textArray={textArray}
             colorLetters={colorLetters}
             posCursor={cont}
+            isFocused={isFocused}
+            focus={focus}
           />
         </div>
         <div className="col-start-2">

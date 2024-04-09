@@ -2,7 +2,11 @@ export const Footer = () => {
   return (
     <footer className="h-12 w-full ">
       <section className="flex h-full items-end  fill-subColor text-subColor">
-        <a className="flex cursor-pointer items-center hover:fill-textColor hover:text-textColor">
+        <a
+          href="https://github.com/FernandoMarcoF/KeyboardGame"
+          target="_blank"
+          className="flex cursor-pointer items-center hover:fill-textColor hover:text-textColor"
+        >
           <svg
             className="mr-2 "
             width="18px"

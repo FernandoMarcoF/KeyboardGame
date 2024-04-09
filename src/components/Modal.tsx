@@ -40,13 +40,13 @@ export const Modal = ({ listQuotes, focus, option }: ComponenteProps) => {
   return (
     <>
       {/*Button trigger modal*/}
-      <div className="flex w-full justify-center text-xl text-subColor">
+      <div className="flex w-full justify-center fill-subColor text-xl text-subColor hover:fill-textColor hover:text-textColor">
         <button
           type="button"
           onClick={handleButtonClick}
           className="flex items-center p-2"
         >
-          <div className="mr-4 fill-subColor">
+          <div className="mr-4 fill-current">
             <svg
               width="20px"
               height="20px"
