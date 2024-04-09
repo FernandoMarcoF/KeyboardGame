@@ -1,6 +1,6 @@
 # Keyboard Game
 
-# Juego de Mecanografía
+## Juego de Mecanografía
 
 Un juego de mecanografía simple construido con React.
 
