@@ -1,30 +1,22 @@
 # Keyboard Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Juego de Mecanografía
 
-Currently, two official plugins are available:
+Un juego de mecanografía simple construido con React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demostración
 
-## Expanding the ESLint configuration
+[Demo en vivo](https://gamekeyboard.netlify.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Captura de pantalla](/screenshots/screenshot.png)
 
-- Configure the top-level `parserOptions` property like this:
+## Tecnologías Utilizadas
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+    - React
+    - Vite
+    - TypeScript
+    - Tailwind CSS
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Características
+
+    Práctica de mecanografía con frases aleatorias.

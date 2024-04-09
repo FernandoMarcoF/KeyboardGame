@@ -104,8 +104,8 @@ export const HomePage = () => {
     setIsFocused(true);
   }, []);
 
-  const bgClick = (event) => {
-    const { id } = event.target;
+  const bgClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const { id } = event.target as HTMLDivElement;
     if (id === "main-bg") {
       setIsFocused(false);
     }
@@ -123,7 +123,7 @@ export const HomePage = () => {
           {`${cont}/${textArray.length}`}
         </span>
         <Modal listQuotes={listQuotes} focus={focus} option={option} />
-        
+
         <div className="relative col-span-3 items-center text-2xl">
           <input
             className="absolute left-0 top-0 opacity-0"
